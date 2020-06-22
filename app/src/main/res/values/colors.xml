@@ -3,4 +3,34 @@
     <color name="colorPrimary">#5DD5C8</color><!--主题颜色-->
     <color name="colorPrimaryDark">@android:color/black</color><!--状态栏/电池栏的颜色-->
     <color name="colorAccent">#5DD5C8</color>
+
+    <!--    #F60B0B-->
+    <color name="theme">#F60B0B</color>
+    <color name="theme_2">#00CAAE</color>
+    <color name="normal_color">#bfbfbf</color>
+
+    <!--    点击波纹效果颜色-->
+    <color name="ripple_gray">#D1D1D1</color>
+    <!--    点击波纹效果颜色-->
+    <color name="search_bg_gray">#F7F7F7</color>
+
+    <!--    一级标题颜色-->
+    <color name="text_1">#333333</color>
+    <!--    二级标题颜色-->
+    <color name="text_2">#999999</color>
+    <!--    三级标题颜色-->
+    <color name="text_3">#bbbbbb</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#111111</color>
+    <color name="red">#F60B0B</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="division_line">#EDEDED</color>
+    <color name="division_line_thickening">#F8F8F8</color>
+
+    <color name="orange">#ea9518</color>
+    <!--    标记框背景色-->
+    <color name="share_edit">#F7F7F7</color>
 </resources>

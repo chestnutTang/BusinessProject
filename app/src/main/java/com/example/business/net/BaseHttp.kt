@@ -11,7 +11,7 @@ import com.example.business.util.ResponseLog
 object BaseHttp {
     private const val TIME_OUT: Long = 10000
 
-    val baseHttp: NetService
+    val baseHttp: ApiService
         get() = Builder()
             .setBaseUrl("http://mobile.bwstudent.com/")
             .setLogInterceptor(true)
@@ -31,7 +31,7 @@ object BaseHttp {
             return this
         }
 
-        fun builder(): NetService {
+        fun builder(): ApiService {
             val okHttpClient = OkHttpClient.Builder()
             okHttpClient.connectTimeout(TIME_OUT, TimeUnit.MILLISECONDS)
             okHttpClient.readTimeout(TIME_OUT, TimeUnit.MILLISECONDS)
@@ -54,7 +54,7 @@ object BaseHttp {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(okHttpClient.build())
                 .build()
-                .create(NetService::class.java)
+                .create(ApiService::class.java)
         }
     }
 }
