@@ -2,33 +2,33 @@ package com.example.business
 
 import android.util.Log
 import android.util.MalformedJsonException
-import com.example.business.bean.WeatherBean
+import com.example.business.model.FFF
 import com.example.business.model.IWeatherModel
 import com.example.business.net.AppException
 import com.example.business.net.BaseHttp
 import com.example.business.net.HttpCodeException
 import com.google.gson.JsonParseException
-import io.reactivex.AndroidSchedulers
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import io.reactivex.subscribers.ResourceSubscriber
 import org.json.JSONException
 import retrofit2.HttpException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.text.ParseException
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subscribers.ResourceSubscriber
 
 
 class WeatherModel : IWeatherModel {
     override fun cityWeather(cityName: String, listener: IWeatherModel.CityWeatherListener) {
-        BaseHttp.baseHttp.cityWeather(cityName)
+        BaseHttp.baseHttp.cityWeather2("18612991023", "111111")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()) // 请求都完成后，切换到UI线程，将结果进行渲染
             .flatMap(AppException())
-            .subscribe(object : ResourceSubscriber<WeatherBean>() {
+            .subscribe(object : ResourceSubscriber<FFF>() {
                 override fun onComplete() {
                 }
 
-                override fun onNext(t: WeatherBean) {
+                override fun onNext(t: FFF) {
                     listener.responseWeatherSuccess(t)
                 }
 

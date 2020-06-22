@@ -1,6 +1,7 @@
 package com.example.business
 
 import com.example.business.bean.WeatherBean
+import com.example.business.model.FFF
 import com.example.business.model.IWeatherModel
 
 class WeatherPresenter internal constructor( private val mView: WeatherContract.View) : WeatherContract.Presenter {
@@ -8,7 +9,7 @@ class WeatherPresenter internal constructor( private val mView: WeatherContract.
 
     override fun cityName(cityName: String) {
         mModel.cityWeather(cityName, object : IWeatherModel.CityWeatherListener {
-            override fun responseWeatherSuccess(bean: WeatherBean) {
+            override fun responseWeatherSuccess(bean: FFF) {
                 mView.getCityWeatherSuccess(bean)
             }
 

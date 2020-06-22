@@ -2,9 +2,9 @@ package com.example.business.net
 
 import com.example.business.bean.BaseBean
 import com.example.business.bean.WeatherBean
+import com.example.business.model.FFF
 import io.reactivex.Flowable
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface NetService {
     /**
@@ -12,6 +12,17 @@ interface NetService {
      *
      * @param cityName 城市名称
      */
-    @GET("weatherApi")
-    fun cityWeather(@Query("city") cityName: String): Flowable<BaseBean<WeatherBean>>
+    @POST("/small/user/v1/login")
+    @FormUrlEncoded
+    fun cityWeather(
+        @Field("phone") mobile: String,
+        @Field("pwd") pwd: String
+    ): Flowable<BaseBean<WeatherBean>>
+
+    @POST("small/user/v1/login")
+    @FormUrlEncoded
+    fun cityWeather2(
+        @Field("phone") mobile: String,
+        @Field("pwd") pwd: String
+    ): Flowable<BaseBean<FFF>>
 }

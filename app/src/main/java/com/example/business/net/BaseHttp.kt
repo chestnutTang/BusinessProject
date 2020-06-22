@@ -9,11 +9,11 @@ import java.util.concurrent.TimeUnit
 import com.example.business.util.ResponseLog
 
 object BaseHttp {
-    private val TIME_OUT: Long = 10000
+    private const val TIME_OUT: Long = 10000
 
     val baseHttp: NetService
         get() = Builder()
-            .setBaseUrl("https://www.apiopen.top/")
+            .setBaseUrl("http://mobile.bwstudent.com/")
             .setLogInterceptor(true)
             .builder()
 

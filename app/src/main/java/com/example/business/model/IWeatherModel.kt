@@ -7,7 +7,7 @@ interface IWeatherModel {
 
     interface CityWeatherListener {
 
-        fun responseWeatherSuccess(bean: WeatherBean)
+        fun responseWeatherSuccess(bean: FFF)
 
         fun responseWeatherFail(msg: String)
     }
